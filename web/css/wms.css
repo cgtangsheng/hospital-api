@@ -1,0 +1,32 @@
+
+.normal-select select { -moz-appearance: none;}
+.normal-select i::after { border-left: 4px solid transparent; border-right: 4px solid transparent; content: ""; position: absolute; right: 0; }
+.normal-select i::after { border-top: 4px solid #515151; bottom: 2px; }
+.normal-select i {
+    background: none repeat scroll 0 0 #fff;
+    box-shadow: 0 0 0 9px #fff;
+    height: 11px;
+    position: absolute;
+    right: 11px;
+    top: 10px;
+    width: 5px;
+    z-index: 3;
+}
+
+.multiselect-container > li { padding: 0; }
+.multiselect-container > li > a {clear: both;
+    display: block;
+    font-weight: normal;
+    line-height: 1.42857;
+    padding: 6px 15px;
+    white-space: nowrap;
+}
+.multiselect-container .active a, .multiselect-container .active a:hover {
+    background-color: #0081C2;
+    background-image: linear-gradient(to bottom, #0088CC, #0077B3);
+    background-repeat: repeat-x;
+}
+.multiselect-container li:hover a label {
+    color:#fff;
+}
+.multiselect-container .active label{ color:#fff; font-size: 13px;}

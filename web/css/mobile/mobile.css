@@ -1,0 +1,80 @@
+@charset "utf-8";
+
+*:focus {
+    outline: none
+}
+
+.mobile-register .logo {
+    padding: 50px 0;
+    text-align: center;
+}
+.mobile-register .logo img {
+    width: 70%;
+}
+
+.input-group-addon:first-child {
+    border: none;
+    background: none;
+}
+.input-group{
+    border-bottom: 1px #f0f2f2 solid;
+}
+.form-control {
+    padding:6px 5px;
+    color:#a0a2a2;
+    border: none;
+    font-family: "微软雅黑";
+}
+.btn-danger{
+    background:#22cd3e;
+    border:none;
+    border-radius: 4px;
+}
+.alert{
+    padding:8px;
+}
+.input-group-addon{
+    padding:5px 5px;
+}
+.tip{
+    text-align: center;
+}
+.tip p{
+    color:#a0a2a2;
+}
+.tip a{
+    color:#22cd3e;
+}
+.mobile-appdown .logo{
+    padding:40px 0 20px;
+    background:#22cd3e;
+    text-align: center;
+}
+.mobile-appdown .logo img{
+    width:60%;
+}
+.down-btn{
+    padding:30px 0;
+    text-align: center;
+}
+.down-btn .btn{
+    font-size:16px;
+    margin:0 8px;
+    padding:6px 20px;
+}
+.btn-danger[disabled]{
+    background:#ccc;
+}
+@font-face {
+    font-family: 'iconfont';
+    src: url('icon/iconfont.eot'); /* IE9*/
+    src: url('icon/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('icon/iconfont.woff') format('woff'), /* chrome、firefox */ url('icon/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/ url('icon/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 20px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}

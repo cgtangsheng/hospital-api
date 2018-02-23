@@ -1,0 +1,312 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="Stylesheet" href="context/themes/base/style.css" type="text/css" />
+    <link rel="Stylesheet" href="context/themes/base/jquery-ui.css" type="text/css" />
+    <script src="scripts/jquery.js" type="text/javascript"></script>
+    <script src="scripts/jquery-ui.js" type="text/javascript"></script>
+    <script src="scripts/jquery.contextMenu.js" type="text/javascript"></script>
+    <script src="scripts/jquery.cleverTabs.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var tabs;
+        var tmpCount = 0;
+
+        $(function () {
+
+            tabs = $('#tabs').cleverTabs();
+            $(window).bind('resize', function () {
+                tabs.resizePanelContainer();
+            });
+
+            tabs.add({
+                url: 'http://think8848.cnblogs.com',
+                label: 'think8848'
+            });
+
+            tabs.add({
+                url: 'http://www.google.com.hk',
+                label: 'google'
+            });
+
+            tabs.add({
+                url: 'http://www.baidu.com',
+                label: 'baidu'
+            });
+
+            tabs.add({
+                url: 'http://www.soso.com',
+                label: 'soso',
+                callback: function () {
+                    alert('callback');
+                }
+            });
+
+            tabs.add({
+                url: 'http://www.sogou.com',
+                label: 'sogou'
+            });
+
+            $('input[type="button"]').button();
+
+            $('#btnAddMore').click(function () {
+                tabs.add({
+                    url: 'tmp.htm?' + tmpCount++,
+                    label: 'tab' + tmpCount
+                });
+            });
+        });
+    
+    </script>
+</head>
+<body>
+    <div style="font-size: 16px;">
+        欢迎使用CleverTabs，作者: think8848（公司主页: <a href="http://www.cleversoft.com">http://www.cleversoft.com</a>,
+        QQ: 166156888, Blog: <a href="http://think8848.cnblogs.com">http://think8848.cnblogs.com</a>)
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 转载请保留此信息</div>
+    <div>
+        <p>
+            CleverTabs是一款jQuery插件，所需jQuery版本:1.6.1，jQuery UI样式版本:1.8.13；其功能为创建jQuery UI风格的Tab用于显示iframe。
+        </p>
+    </div>
+    <div id="tabs" style="margin: 0px;">
+        <ul>
+        </ul>
+    </div>
+    <div style="margin-top: 10px">
+        <input id="btnAddMore" type="button" value="添加更多Tab" />
+    </div>
+    <div style="margin-top: 10px">
+        <p>
+            初级应用示例:
+            <br />
+            html:<br />
+            <xmp>
+            <div id="tabs"><ul></ul></div>
+            </xmp>
+            <br />
+            javascript:
+            <br />
+            <xmp>
+            var tabs;
+            <script type="text/javascript">
+                $(function () {
+                    tabs = $('#tabs').cleverTabs();
+                    tabs.add({
+                        url: 'http://think8848.cnblogs.com',
+                        label: 'think8848'
+                    });
+                });
+            </script></xmp>
+        </p>
+        <p>
+            CleverTabs详细说明:<br />
+            CleverTabs为所有Tab的容器
+            <br />
+            <xmp>
+            var tabs;
+            <script type="text/javascript">
+                $(function () {
+                    tabs = $('#tabs').cleverTabs({
+                        //是否安装右键菜单(默认: true)
+                        setupContextMenu: true,
+                        //右键菜单定义, 右键菜单功能由jquery.contextMenu插件提供
+                        //详见: http://abeautifulsite.net/2008/09/jquery-context-menu-plugin/
+                        //本插件中对原contextMenu插件中的样式做了修改，使用了jQuery UI皮肤
+                        contextMenu: {
+                            element: $('#contextMenuElementId'),
+                            handler: function (action, el, pos) { /*do something...*/ }
+                        },
+                        //开启Tab后是否锁定(不允许关闭，默认: false)
+                        lock: false,
+                        //开启Tab后是否禁用(不允许激活和操作iframe内容，默认: false)
+                        disable: false,
+                        //当tabs中只有一个Tab时，是否锁定该Tab(默认: true)
+                        lockOnlyOne: true,
+                        //显示iframe的容器(默认创建在tabs元素中)
+                        panelContainer: $('#panelContainerElementId')/*,
+                        其中
+                        tabHeaderTemplate: '', //(Tab用于控制的头模板)
+                        tabPanelTemplate: '', //(Tab用于显示的Panel模板)
+                        uidGenerator: function() {} //(Tab唯一id生成器) 
+                        功能现在不启用，等有时间完善后再启用*/
+                    });
+
+                    tabs.add({
+                        url: 'http://think8848.cnblogs.com',
+                        label: 'think8848'
+                    });
+                });
+            </script>
+            </xmp>
+            <br />
+            CleverTabs.add方法:
+            <br />
+            添加一个新的Tab并使之成为激活状态，如果将要添加的url已经存在，则会激活该Tab
+            <br />
+            <xmp>
+            <script type="text/javascript">
+                var tabs = ('#tabs').cleverTabs();
+                tabs.add({
+                    //必须是在tabs内唯一的id
+                    id: 'uniqueId',
+                    //将要在iframe的src属性设置的值
+                    url: 'iframe.src',
+                    //显示在Tab头上的文字
+                    label: 'tab header',
+                    //关闭本Tab时需要刷新的Tab的url(默认: null)
+                    closeREfresh: 'tab url',
+                    //关闭本Tab时需要激活的Tab的url(默认: null)
+                    closeActivate: 'tab url',
+                    //关闭本Tab时需要执行的回调函数
+                    callback: function () { /*do something*/ }
+                });
+            </script>
+            </xmp>
+            <br />
+            CleverTabs.getCurrentTab方法:
+            <br />
+            获取当前处于激活状态的Tab
+            <br />
+            <xmp>
+            <script type="text/javascript">
+                var tabs = ('#tabs').cleverTabs();
+                var tab = tabs.getCurrentTab();
+            </script>
+            </xmp>
+            <br />
+            CleverTabs.getTabByUrl方法:
+            <br />
+            获取指定url的Tab实例
+            <br />
+            <xmp>
+            <script type="text/javascript">
+                var tabs = ('#tabs').cleverTabs();
+                var tab = tabs.getTabByUrl('http://think8848.cnblogs.com');
+            </script>
+            </xmp>
+            <br />
+            CleverTabs.clear方法:
+            <br />
+            关闭tabs内所有未锁定的Tab
+            <br />
+            <xmp>
+            <script type="text/javascript">
+                var tabs = ('#tabs').cleverTabs();
+                var tab = tabs.clear();
+            </script>
+            </xmp>
+            <br />
+            CleverTabs.resizePanelContainer方法:
+            <br />
+            重新默认的tabs的PanelContainer的大小
+            <br />
+            <xmp>
+            <script type="text/javascript">
+                var tabs = ('#tabs').cleverTabs();
+                $(window).bind('resize', function () {
+                    //当发生window.resize事件时，重新默认的tabs的PanelContainer的大小
+                    tabs.resizePanelContainer();
+                });
+            </script>
+            </xmp>
+            <br />
+        </p>
+        <p>
+            CleverTab(注意没有s)说明:
+            <br />
+            CleverTab为一个单一的Tab，包含头(li)和页面(panel>ifame)
+            <br />
+            CleverTab.activate方法:
+            <br />
+            使Tab页面处于激活状态
+            <br />
+            <xmp>
+            <script type="text/javascript">
+                var tabs = ('#tabs').cleverTabs();
+                var tab = tabs.getTabByUrl('http://think8848.cnblogs.com');
+                tab.activate();
+            </script>
+            </xmp>
+            <br />
+            CleverTab.deactivate方法:
+            <br />
+            使Tab页面处于未激活状态，但不建议在代码中使用
+            <br />
+            CleverTab.prevTab方法:
+            <br />
+            获取该Tab之前的Tab
+            <br />
+            <xmp>
+            <script type="text/javascript">
+                var tabs = ('#tabs').cleverTabs();
+                var tab = tabs.getTabByUrl('http://think8848.cnblogs.com');
+                var prevTab = tab.prevTab();
+            </script>
+            </xmp>
+            <br />
+            CleverTab.nextTab方法:
+            <br />
+            获取该Tab之后的Tab
+            <br />
+            <xmp>
+            <script type="text/javascript">
+                var tabs = ('#tabs').cleverTabs();
+                var tab = tabs.getTabByUrl('http://think8848.cnblogs.com');
+                var prevTab = tab.nextTab();
+            </script>
+            </xmp>
+            <br />
+            CleverTab.kill方法:
+            <br />
+            从tabs中移移该Tab
+            <br />
+            <xmp>
+            <script type="text/javascript">
+                var tabs = ('#tabs').cleverTabs();
+                var tab = tabs.getTabByUrl('http://think8848.cnblogs.com');
+                tab.kill();
+            </script>
+            </xmp>
+            <br />
+            CleverTab.refresh方法:
+            <br />
+            刷新该Tab的iframe中的内容
+            <br />
+            <xmp>
+            <script type="text/javascript">
+                var tabs = ('#tabs').cleverTabs();
+                var tab = tabs.getTabByUrl('http://think8848.cnblogs.com');
+                tab.refresh();
+            </script>
+            </xmp>
+            <br />
+            CleverTab.setDisable方法:
+            <br />
+            设置该Tab的disabled属性，设置disabled为true后，自动设置该Tab的locked属性为true
+            <br />
+            <xmp>
+            <script type="text/javascript">
+                var tabs = ('#tabs').cleverTabs();
+                var tab = tabs.getTabByUrl('http://think8848.cnblogs.com');
+                //参数true为禁用，false或不提供值为启用
+                tab.setDisable(true);
+            </script>
+            </xmp>
+            <br />
+            CleverTab.setLock方法:
+            <br />
+            设置该Tab的locked属性，设置locked为true后，该Tab的不允许关闭
+            <br />
+            <xmp>
+            <script type="text/javascript">
+                var tabs = ('#tabs').cleverTabs();
+                var tab = tabs.getTabByUrl('http://think8848.cnblogs.com');
+                //参数true为锁定，false或不提供值为解锁
+                tab.setLock(true);
+            </script>
+            </xmp>
+        </p>
+    </div>
+</body>
+</html>
