@@ -15,7 +15,7 @@ CREATE TABLE `user_info` (
   KEY `idx_id` (`health_id`),
   KEY `idx_name` (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8
-//就诊记录表
+#就诊记录表
 DROP TABLE IF EXISTS `record`;
  CREATE TABLE `user_info` (
   `health_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '健康管理好',
@@ -56,7 +56,7 @@ CREATE TABLE `check_record`(
   KEY `idx_health_id` (`health_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
 
-//糖代谢记录表
+#糖代谢记录表
 DROP TABLE IF EXISTS `dm_record`;
 CREATE TABLE `dm_record`(
  `health_id` int(10) unsigned DEFAULT 0 COMMENT '健康管理号',
@@ -80,23 +80,6 @@ CREATE TABLE `dm_record`(
  `is_peripheral_neuropathy` SMALLINT(5) unsigned DEFAULT 0 COMMENT '是否周围神经病变',
  `is_diabetic_foot` SMALLINT(5) unsigned DEFAULT 0 COMMENT '糖尿病足',
  `associated_diseases` VARCHAR(255) DEFAULT '' COMMENT '伴发疾病',
- `work_density` SMALLINT(5) unsigned DEFAULT 0 COMMENT '劳动强度',
- `diet` FLOAT(5,2) DEFAULT 0.0 COMMENT '主食',
- `vegetables` FLOAT(5,2) DEFAULT 0.0 COMMENT '蔬菜',
- `milk` FLOAT(5,2) DEFAULT 0.0 COMMENT '牛奶',
- `egg` SMALLINT(5) unsigned DEFAULT 0 COMMENT '鸡蛋',
- `meet` FLOAT(5,2) DEFAULT 0.0 COMMENT '肉类',
- `bean` FLOAT(5,2) DEFAULT 0.0 COMMENT '豆类',
- `oil`  FLOAT(5,2) DEFAULT 0.0 COMMENT '油',
- `salt` FLOAT(5,2) DEFAULT 0.0 COMMENT '盐',
- `sports_type` SMALLINT(5) unsigned DEFAULT 0 COMMENT '运动方式',
- `sports_intensity`  SMALLINT(5) unsigned DEFAULT 0 COMMENT '运动强度',
- `sports_time` SMALLINT(8) unsigned DEFAULT 0 COMMENT '运动时长',
- `sports_frequency`  SMALLINT(5) unsigned DEFAULT 0 COMMENT '运动频率',
- `is_smoke` SMALLINT(5) unsigned DEFAULT 0 COMMENT '是否吸烟',
- `smoke_num` SMALLINT(5) unsigned DEFAULT 0 COMMENT '吸烟量',
- `is_drink` SMALLINT(5) unsigned DEFAULT 0 COMMENT '是否饮酒',
- `drink_num` SMALLINT(5) unsigned DEFAULT 0 COMMENT '饮酒量',
  `high_blood_pressure`  SMALLINT(8) unsigned DEFAULT 0 COMMENT '血压高压',
  `low_blood_pressure`  SMALLINT(8) unsigned DEFAULT 0 COMMENT '血压低压',
  `blood_pressure_addr` SMALLINT(5) unsigned DEFAULT 0 COMMENT '血压测量地点',
@@ -108,7 +91,7 @@ CREATE TABLE `dm_record`(
   KEY `idx_health_id` (`health_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
 
-//糖代谢记录表
+#糖代谢记录表
 DROP TABLE IF EXISTS `doctor`;
 CREATE TABLE `doctor` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '医生编号',
