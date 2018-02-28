@@ -20,23 +20,23 @@ class UserController extends Controller{
     public function behaviors()
     {
         return [
-            'access' => [
-                'class' => AccessControl::className(),
-                'only' => ['logout'],
-                'rules' => [
-                    [
-                        'actions' => ['logout'],
-                        'allow' => true,
-                        'roles' => ['@'],
-                    ],
-                ],
-            ],
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'logout' => ['post'],
-                ],
-            ],
+//            'access' => [
+//                'class' => AccessControl::className(),
+//                'only' => ['logout'],
+//                'rules' => [
+//                    [
+//                        'actions' => ['logout'],
+//                        'allow' => true,
+//                        'roles' => ['@'],
+//                    ],
+//                ],
+//            ],
+//            'verbs' => [
+//                'class' => VerbFilter::className(),
+//                'actions' => [
+////                    'logout' => ['post'],
+//                ],
+//            ],
         ];
     }
 
@@ -303,6 +303,21 @@ class UserController extends Controller{
             Yii::$app->response->data = $response;
             return ;
         }
+    }
+
+    public function actionLogout(){
+        $response = array();
+        $request = Yii::$app->request->queryParams;
+        header("Access-Control-Allow-Origin: *");
+
+        Yii::$app->response->statusCode = 200;
+        Yii::$app->response->format = Response::FORMAT_JSON;
+        $token = $request["token"];
+        Yii::$app->cache->delete($token);
+        $response=array(
+            "ret"=>0
+        );
+        Yii::$app->response->data=$response;
     }
 
 
