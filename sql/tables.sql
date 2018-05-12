@@ -103,3 +103,13 @@ CREATE TABLE `doctor` (
   `identify` varchar(32) NOT NULL DEFAULT "" COMMENT '身份证号',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1000000001  DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `article`;
+CREATE TABLE `article`(
+  `id` varchar(16) NOT NULL DEFAULT "" COMMENT '文章id',
+  `title` varchar(256) NOT NULL DEFAULT "" COMMENT '文章标题',
+  `source` varchar(64) NOT NULL DEFAULT "" COMMENT '文章来源',
+  `content` TEXT COMMENT '文章内容',
+  `update_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '更新时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

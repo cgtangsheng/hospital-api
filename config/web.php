@@ -59,7 +59,7 @@ $config = [
         ],
         'doctor' =>[
             'class' => 'app\modules\doctor\Doctor',
-        ]
+        ],
     ],
     'params' => $params,
 ];
