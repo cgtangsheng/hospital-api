@@ -2,9 +2,9 @@
 
 return [
     'adminEmail' => 'admin@example.com',
-    'hostUrl'=>"http://127.0.0.1",
+    'hostUrl'=>"http://api.zldzbl.cn",
     'imagePath'=>"/home/work/images",
-    'wxUrl'=>'https://api.weixin.qq.com/sns/oauth2/access_token',
-    'appid'=>'wx2801ef2cb1fcb87e',
-    'app_secret'=>'a646fbfea0060b07a78d44a8b2bdaee8'
+    'wxUrl'=>'https://api.weixin.qq.com',
+    'appid'=>'wx85ad67fa6e62b109',
+    'app_secret'=>'028b6924ee1cd5a34a747fd136e95a0b'
 ];

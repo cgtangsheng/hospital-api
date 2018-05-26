@@ -36,7 +36,7 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     {
         return [
             [['username', 'password'], 'required'],
-            [['id','username'], 'string', 'max' => 50],
+            [['id','username','openid'], 'string', 'max' => 50],
             [['password'], 'string', 'max' => 32],
             [['authKey', 'accessToken'], 'string', 'max' => 100],
             [['type'], 'integer', 'max' => 100],
@@ -54,7 +54,8 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
             'password' => 'Password',
             'authKey' => 'Auth Key',
             'accessToken' => 'Access Token',
-            'type'=>'role type'
+            'type'=>'role type',
+            'openid'=>'openid'
         ];
     }
 
@@ -147,6 +148,12 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     public function getType()
     {
         return $this->type;
+    }
+
+    public function findUserByOpenId($openid){
+        $sql = "select * from user where openid=:openid ";
+        $data = Yii::$app->db->createCommand($sql)->bindParam(":openid",$openid)->queryOne();
+        return $data;
     }
 
 }
