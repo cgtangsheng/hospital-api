@@ -6,6 +6,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/params.php" afterPath="$PROJECT_DIR$/config/params.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/WechatController.php" afterPath="$PROJECT_DIR$/controllers/WechatController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/User.php" afterPath="$PROJECT_DIR$/models/User.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sql/tables.sql" afterPath="$PROJECT_DIR$/sql/tables.sql" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -36,11 +37,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WechatController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="WechatController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/WechatController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="21" column="79" lean-forward="false" selection-start-line="21" selection-start-column="79" selection-end-line="21" selection-end-column="79" />
+            <state relative-caret-position="-181">
+              <caret line="41" column="43" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
               <folding>
                 <element signature="e#6#89#0#PHP" expanded="true" />
                 <element signature="e#117#137#0#PHP" expanded="true" />
@@ -52,7 +53,7 @@
       <file leaf-file-name="BaseActiveRecord.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/yiisoft/yii2/db/BaseActiveRecord.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
+            <state relative-caret-position="196">
               <caret line="639" column="20" lean-forward="false" selection-start-line="639" selection-start-column="20" selection-end-line="639" selection-end-column="20" />
               <folding />
             </state>
@@ -62,10 +63,11 @@
       <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="38" column="37" lean-forward="false" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="37" />
+            <state relative-caret-position="341">
+              <caret line="158" column="51" lean-forward="false" selection-start-line="158" selection-start-column="44" selection-end-line="158" selection-end-column="51" />
               <folding>
-                <marker date="1527320266889" expanded="true" signature="3239:3278" ph="select * fro... user" />
+                <marker date="1527323337210" expanded="true" signature="3239:3278" ph="select * fro... user" />
+                <marker date="1527323337210" expanded="true" signature="3475:3516" ph="insert into user... " />
               </folding>
             </state>
           </provider>
@@ -81,7 +83,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="params.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="params.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/params.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="72">
@@ -100,6 +102,26 @@
                 <element signature="e#35#62#0#PHP" expanded="true" />
                 <marker date="1519749316923" expanded="true" signature="2748:2854" ph="update user_... " />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ui_tables.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sql/ui_tables.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="522">
+              <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tables.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sql/tables.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="275">
+              <caret line="36" column="21" lean-forward="true" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -150,15 +172,15 @@
         <option value="$PROJECT_DIR$/controllers/UserController.php" />
         <option value="$PROJECT_DIR$/modules/article/Base.php" />
         <option value="$PROJECT_DIR$/config/web.php" />
-        <option value="$PROJECT_DIR$/sql/tables.sql" />
         <option value="$PROJECT_DIR$/models/Article.php" />
         <option value="$PROJECT_DIR$/library/HelperHttp.php" />
         <option value="$PROJECT_DIR$/controllers/ArticleController.php" />
         <option value="$PROJECT_DIR$/controllers/ＷxController.php" />
         <option value="$PROJECT_DIR$/components/HttpHelper.php" />
-        <option value="$PROJECT_DIR$/models/User.php" />
-        <option value="$PROJECT_DIR$/controllers/WechatController.php" />
         <option value="$PROJECT_DIR$/config/params.php" />
+        <option value="$PROJECT_DIR$/models/User.php" />
+        <option value="$PROJECT_DIR$/sql/tables.sql" />
+        <option value="$PROJECT_DIR$/controllers/WechatController.php" />
       </list>
     </option>
   </component>
@@ -505,12 +527,12 @@
       <workItem from="1526123876938" duration="1205000" />
       <workItem from="1526698345057" duration="11544000" />
       <workItem from="1526734916354" duration="1231000" />
-      <workItem from="1527303009646" duration="5821000" />
+      <workItem from="1527303009646" duration="7778000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101594000" />
+    <option name="totallyTimeSpent" value="103551000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
@@ -781,22 +803,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sql/ui_tables.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sql/tables.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="106" column="0" lean-forward="false" selection-start-line="106" selection-start-column="0" selection-end-line="114" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/ArticleController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
@@ -898,40 +904,57 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config/params.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="11" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/yiisoft/yii2/db/BaseActiveRecord.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
+        <state relative-caret-position="196">
           <caret line="639" column="20" lean-forward="false" selection-start-line="639" selection-start-column="20" selection-end-line="639" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sql/ui_tables.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sql/tables.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="36" column="21" lean-forward="true" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/models/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="38" column="37" lean-forward="false" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="37" />
+        <state relative-caret-position="341">
+          <caret line="158" column="51" lean-forward="false" selection-start-line="158" selection-start-column="44" selection-end-line="158" selection-end-column="51" />
           <folding>
-            <marker date="1527320266889" expanded="true" signature="3239:3278" ph="select * fro... user" />
+            <marker date="1527323337210" expanded="true" signature="3239:3278" ph="select * fro... user" />
+            <marker date="1527323337210" expanded="true" signature="3475:3516" ph="insert into user... " />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/WechatController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="21" column="79" lean-forward="false" selection-start-line="21" selection-start-column="79" selection-end-line="21" selection-end-column="79" />
+        <state relative-caret-position="-181">
+          <caret line="41" column="43" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
           <folding>
             <element signature="e#6#89#0#PHP" expanded="true" />
             <element signature="e#117#137#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/params.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="11" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>

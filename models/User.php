@@ -156,4 +156,10 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
         return $data;
     }
 
+    public function registerNewUserByOpenid($openid){
+        $sql = "insert into user (openid) values(:openid)";
+        $res = Yii::$app->db->createCommand($sql)->bindParam(":openid",$openid)->execute();
+        return $res;
+    }
+
 }

@@ -48,22 +48,26 @@ class WechatController extends Controller{
                 if ($data == false) {
                     //如果用户之前没有注册过,则注册新的帐号
                     $model->openid = $resData["openid"];
-                    if ($model->save()) {
+                    if ($model->registerNewUserByOpenid($resData["openid"])) {
                         $response = array(
-                            "status" => 0,
+                            "errcode" => 0,
                         );
                         $token = md5(Yii::$app->security->generateRandomString());
-                        $userInfo = $model->findUserByOpenId();
+                        $userInfo = $model->findUserByOpenId($resData["openid"]);
                         Yii::$app->cache->set($token,$userInfo["id"],86400*7);
                         $response["token"]=$token;
                     } else {
                         $response = array(
-                            "status" => 1,
+                            "errcode" => -3,
+                            "errmsg" => "regist fail",
                         );
                     }
                 } else {
+                    $token = md5(Yii::$app->security->generateRandomString());
+                    Yii::$app->cache->set($token,$data["id"],86400*7);
                     $response = array(
-                        "status" => 0,
+                        "errcode" => 0,
+                        "token"=>$token,
                     );
                 }
 

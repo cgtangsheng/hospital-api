@@ -36,10 +36,12 @@ DROP TABLE IF EXISTS `record`;
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '健康档案号',
-  `username` varchar(50) NOT NULL DEFAULT '',
-  `password` varchar(32) NOT NULL DEFAULT '',
+  `username` varchar(50) NOT NULL DEFAULT '' COMMENT '用户名',
+  `password` varchar(32) NOT NULL DEFAULT '' COMMENT '密码',
   `authKey` varchar(100) NOT NULL DEFAULT '',
-  `accessToken` varchar(100) NOT NULL DEFAULT '',
+  `accessToken` varchar(100) NOT NULL DEFAULT '' ,
+  `openid` varchar(64) NOT NULL DEFAULT '' COMMENT 'openid',
+  `type` tinyint(2) NOT NULL DEFAULT 0 COMMENT '用户类型',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1000000001  DEFAULT CHARSET=utf8;
 
