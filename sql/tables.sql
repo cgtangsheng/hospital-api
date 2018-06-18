@@ -110,11 +110,13 @@ CREATE TABLE `doctor` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1000000001  DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS `article`;
-CREATE TABLE `article`(
-  `id` varchar(16) NOT NULL DEFAULT "" COMMENT '文章id',
-  `title` varchar(256) NOT NULL DEFAULT "" COMMENT '文章标题',
-  `source` varchar(64) NOT NULL DEFAULT "" COMMENT '文章来源',
-  `content` TEXT COMMENT '文章内容',
+CREATE TABLE `article` (
+  `id` varchar(16) NOT NULL DEFAULT '' COMMENT '文章id',
+  `title` varchar(256) NOT NULL DEFAULT '' COMMENT '文章标题',
+  `source` varchar(64) NOT NULL DEFAULT '' COMMENT '文章来源',
+  `content` text COMMENT '文章内容',
   `update_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '更新时间',
+  `images` text COMMENT '图片列表',
+  `classify` varchar(64) NOT NULL DEFAULT '' COMMENT '分类信息',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8

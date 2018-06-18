@@ -67,7 +67,7 @@ class ArticleController extends Controller{
         $type = $imgInfo[1];
         $fileName = $fileName.".".$type;
         $res=move_uploaded_file($fileObj["tmp_name"],Yii::$app->params["imagePath"]."/".$fileName);
-        $url = Yii::$app->params["hostUrl"]."/images/".$fileName;
+        $url = Yii::$app->params["imgUrl"]."/images/".$fileName;
         Yii::$app->response->data = array("url"=>$url);
     }
 
